@@ -15,6 +15,7 @@ package mqd
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"os"
 )
@@ -27,7 +28,7 @@ func init() { log.Printf("MQD DEBUG PACKAGE LOADED") }
 
 // SetOutput sets the output of the functions in this package to w.  By default
 // the functions write to os.Stdout.
-func SetOutput(w io.Write) { selog.SetOutput(w) }
+func SetOutput(w io.Writer) { selog.SetOutput(w) }
 
 // Logf logs a message with the current file and line, if they can be
 // determined.
