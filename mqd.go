@@ -10,7 +10,7 @@ package mqd
  * Log debug messages
  * By J. Stuart McMurray
  * Created 20220829
- * Last Modified 20230415
+ * Last Modified 20230425
  */
 
 import (
@@ -53,3 +53,7 @@ func Here2() { nLogf(1, "Here2") }
 // FinishThis prints "TODO: Finish this" with the current file and line, if
 // they can be determined.
 func FinishThis() { nLogf(1, "TODO: Finish this") }
+
+// DeleteThis prints "TODO: Delete this" with the current file and line, if
+// they can be determined.
+func DeleteThis() { nLogf(1, "TODO: Delete this") }
