@@ -10,7 +10,7 @@ package mqd
  * Log debug messages
  * By J. Stuart McMurray
  * Created 20220829
- * Last Modified 20230513
+ * Last Modified 20230515
  */
 
 import (
@@ -33,6 +33,9 @@ func SetOutput(w io.Writer) { selog.SetOutput(w) }
 // Logf logs a message with the current file and line, if they can be
 // determined.
 func Logf(f string, a ...any) { nLogf(1, f, a...) }
+
+// Fatalf is equivalent to Logf followed by os.Exit(code)
+func Fatalf(code int, f string, a ...any) { nLogf(1, f, a...); os.Exit(code) }
 
 // TODO prints a TODO: message with the current file and line, if they can be
 // determined.
