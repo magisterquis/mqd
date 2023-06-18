@@ -56,3 +56,9 @@ func Here2() { nLogf(1, "Here2") }
 // DeleteThis prints "TODO: Delete this" with the current file and line, if
 // they can be determined.
 func DeleteThis() { nLogf(1, "TODO: Delete this") }
+
+// Use prints "TODO: Use N variables" with the current file and line, if they
+// can be determined.  N is the number of arguments.  This is intended to be
+// used instead of _ = foo to silence warnings about temporarily-unused
+// variables.
+func Use(vars ...any) { nLogf(1, "TODO: Use %d variables", len(vars)) }
