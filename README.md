@@ -1,4 +1,4 @@
-MagisterQuis's printf-style Debug package for go
+MagisterQuis's printf-style Debug package for Go
 ================================================
 [![Go Reference](https://pkg.go.dev/badge/github.com/magisterquis/mqd.svg)](https://pkg.go.dev/github.com/magisterquis/mqd)
 
