@@ -10,7 +10,7 @@ package mqd
  * Log debug messages
  * By J. Stuart McMurray
  * Created 20220829
- * Last Modified 20230515
+ * Last Modified 20231010
  */
 
 import (
@@ -61,4 +61,10 @@ func DeleteThis() { nLogf(1, "TODO: Delete this") }
 // can be determined.  N is the number of arguments.  This is intended to be
 // used instead of _ = foo to silence warnings about temporarily-unused
 // variables.
-func Use(vars ...any) { nLogf(1, "TODO: Use %d variables", len(vars)) }
+func Use(vars ...any) {
+	if 1 == len(vars) {
+		nLogf(1, "TODO: Use %d variable", len(vars))
+	} else {
+		nLogf(1, "TODO: Use %d variables", len(vars))
+	}
+}
