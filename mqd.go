@@ -10,7 +10,7 @@ package mqd
  * Log debug messages
  * By J. Stuart McMurray
  * Created 20220829
- * Last Modified 20231010
+ * Last Modified 20231210
  */
 
 import (
@@ -18,13 +18,14 @@ import (
 	"io"
 	"log"
 	"os"
+	"runtime/debug"
 )
 
 // selog logs to stderr with microsecond precision.
 var selog = log.New(os.Stderr, "", log.LstdFlags|log.Lmicroseconds)
 
 // init notes the log package has been loaded.
-func init() { log.Printf("MQD DEBUG PACKAGE LOADED") }
+func init() { selog.Printf("MQD DEBUG PACKAGE LOADED") }
 
 // SetOutput sets the output of the functions in this package to w.  By default
 // the functions write to os.Stdout.
@@ -56,6 +57,10 @@ func Here2() { nLogf(1, "Here2") }
 // DeleteThis prints "TODO: Delete this" with the current file and line, if
 // they can be determined.
 func DeleteThis() { nLogf(1, "TODO: Delete this") }
+
+// Tracef wraps debug.PrintStack but before the stacktrace prints a message
+// with the current file and line, if they can be determined.
+func Tracef(f string, a ...any) { nLogf(1, f, a...); debug.PrintStack() }
 
 // Use prints "TODO: Use N variables" with the current file and line, if they
 // can be determined.  N is the number of arguments.  This is intended to be
