@@ -10,7 +10,7 @@ package mqd
  * Log debug messages
  * By J. Stuart McMurray
  * Created 20220829
- * Last Modified 20231210
+ * Last Modified 20241001
  */
 
 import (
@@ -57,6 +57,10 @@ func Here2() { nLogf(1, "Here2") }
 // DeleteThis prints "TODO: Delete this" with the current file and line, if
 // they can be determined.
 func DeleteThis() { nLogf(1, "TODO: Delete this") }
+
+// TestThis prints "TODO: Test this" with the current file and line, if
+// they can be determined.
+func TestThis() { nLogf(1, "TODO: Test this") }
 
 // Tracef wraps debug.PrintStack but before the stacktrace prints a message
 // with the current file and line, if they can be determined.
