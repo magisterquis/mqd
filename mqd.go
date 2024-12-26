@@ -10,7 +10,7 @@ package mqd
  * Log debug messages
  * By J. Stuart McMurray
  * Created 20220829
- * Last Modified 20241001
+ * Last Modified 20241226
  */
 
 import (
@@ -28,14 +28,14 @@ var selog = log.New(os.Stderr, "", log.LstdFlags|log.Lmicroseconds)
 func init() { selog.Printf("MQD DEBUG PACKAGE LOADED") }
 
 // SetOutput sets the output of the functions in this package to w.  By default
-// the functions write to os.Stdout.
+// the functions write to os.Stderr.
 func SetOutput(w io.Writer) { selog.SetOutput(w) }
 
 // Logf logs a message with the current file and line, if they can be
 // determined.
 func Logf(f string, a ...any) { nLogf(1, f, a...) }
 
-// Fatalf is equivalent to Logf followed by os.Exit(code)
+// Fatalf is equivalent to Logf followed by os.Exit(code).
 func Fatalf(code int, f string, a ...any) { nLogf(1, f, a...); os.Exit(code) }
 
 // TODO prints a TODO: message with the current file and line, if they can be
